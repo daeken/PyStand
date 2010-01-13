@@ -84,6 +84,7 @@ def callableGenerator(func, *args, **kwargs):
 		
 		generator = test()
 		generator()
+		generator()
 		generator('foo')
 		generator('foo', 'bar')
 	
@@ -96,7 +97,6 @@ def callableGenerator(func, *args, **kwargs):
 	"""
 	func = sanitizeArgs(func)
 	generator = func(*args, **kwargs)
-	generator.next()
 	def callable(*args):
 		try:
 			if len(args) == 0:
